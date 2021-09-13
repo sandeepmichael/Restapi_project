@@ -12,9 +12,9 @@ app.get('/users', (req, res) => {
 
 app.post('/users', (req, res) => {
     const user = req.body;
-    console.log(user)
+   // console.log(user)
     users.push({...user, id:uuidv4()})
-    res.send('user created')
+    res.status(200).send({message:'user created'})
 })
 app.get('/user/:id', (req, res) => {
     const id = req.params.id
