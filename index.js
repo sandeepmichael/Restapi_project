@@ -1,6 +1,6 @@
 const express  = require('express')
 const app = express()
-const { v4: uuidv4 } = require('uuid');
+
 
 app.use(express.json())
  
@@ -13,7 +13,7 @@ app.get('/users', (req, res) => {
 app.post('/users', (req, res) => {
     const user = req.body;
    // console.log(user)
-    users.push({...user, id:uuidv4()})
+    users.push(user)
     res.status(200).send({message:'user created'})
 })
 app.get('/user/:id', (req, res) => {
